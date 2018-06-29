@@ -1,0 +1,80 @@
+
+<html><body bgcolor="#ffffff">
+<img src="logo.png" alt="Elastic" align="center" width="8%" height="12%"><br>
+<Center><img src="download.png" alt="Elastic" align="center" width="600px" height="250px"> </Center>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+	height:100%;
+	border:1px solid black;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+	border:1px solid black;
+}
+table { width: 80%;}
+
+.table .table-cell{
+ width:auto;
+ height:auto;
+ style="word-wrap: break-word"
+ }
+ .cursor {
+    position: relative;
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th: {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+</style>
+
+<div>
+    <form action = "http://localhost:5000/index" method = "get" align="center">
+    <input  style="font-size: 18pt;" type="text" size="50" name="Search_Text" align="center"><br><br>
+    <input style="font-size: 18pt;" size="40" type = "submit" value = "   Search   " />
+	</form>
+    
+</div> <br>
+
+
+<div class="row">
+<center> <h5>Search Results</h5>
+
+         {{tables | safe}}
+
+
+</div>
+</body>
+</html>
+
